@@ -31,7 +31,9 @@ class RegisterFormNorifier extends StateNotifier<RegisterFormState> {
     );
   }
 
-  void onEmailChanged({required String email}) {
+  void onEmailChanged({
+    required String email,
+  }) {
     state = state.copyWith(
       emailAddress: EmailAddress(email),
       authFailureOrSuccessOption: none(),
@@ -54,7 +56,6 @@ class RegisterFormNorifier extends StateNotifier<RegisterFormState> {
     final isFullNameValid = state.fullname.isValid();
 
     if (isEmailValid && isPasswordValid && isFullNameValid && isUserNameValid) {
-      print('it is in');
       state = state.copyWith(
         isSubmitting: true,
         authFailureOrSuccessOption: none(),

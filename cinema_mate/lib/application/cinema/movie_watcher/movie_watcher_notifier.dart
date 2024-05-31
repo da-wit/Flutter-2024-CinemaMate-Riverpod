@@ -12,7 +12,7 @@ class MovieWatcherNotifier extends StateNotifier<MovieWatcherState> {
   final IMovieRepository iMovieRepository;
   MovieWatcherNotifier(this.iMovieRepository) : super(const Initial());
 
-  void watchAllMovies() {
+  void onWatchAllMoviesStarted() {
     state = const MovieWatcherState.loading();
 
     iMovieRepository.watchAll().listen(
@@ -25,7 +25,8 @@ class MovieWatcherNotifier extends StateNotifier<MovieWatcherState> {
     );
   }
 
-  void receiveMovies(Either<MovieFailure, KtList<MovieInfo>> failureOrMovies) {
+  void onMoviesRecieved(
+      Either<MovieFailure, KtList<MovieInfo>> failureOrMovies) {
     state = failureOrMovies.fold(
       (failure) => MovieWatcherState.loadFailure(failure),
       (movies) => MovieWatcherState.loadSuccess(movies),

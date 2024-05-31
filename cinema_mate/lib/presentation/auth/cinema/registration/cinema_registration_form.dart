@@ -42,40 +42,7 @@ class CinemaRegistrationForm extends ConsumerWidget {
       );
     });
 
-    return
-
-        //  BlocConsumer<CinemaRegistrationBloc, CinemaRegistrationState>(
-        //   listener: (context, state) {
-        //     state.authFailureOrSuccessOption.fold(
-        //       () {},
-        //       (either) => either.fold(
-        //         (failure) {
-        //           return ScaffoldMessenger.of(context).showSnackBar(
-        //             SnackBar(
-        //               content: failure.maybeMap(
-        //                 serverError: (_) => const Text('Server Error'),
-        //                 emailAlreadyInUse: (_) =>
-        //                     const Text('Email already in use'),
-        //                 invalidEmailOrPassword: (_) =>
-        //                     const Text('Invalid username or password'),
-        //                 cinemaNameAlreadyInUse: (_) =>
-        //                     const Text('CinemaName already in use'),
-        //                 orElse: () => const Text('Something Went wrong'),
-        //               ),
-        //             ),
-        //           );
-        //         },
-        //         (right) {
-        //           print('Hello world');
-        //           print('Hello world');
-        //           print('Hello world');
-        //         },
-        //       ),
-        //     );
-        //   },
-        // builder: (context, state) {
-        // return
-        Form(
+    return Form(
       autovalidateMode: registerState.showErrorMessages
           ? AutovalidateMode.always
           : AutovalidateMode.disabled,

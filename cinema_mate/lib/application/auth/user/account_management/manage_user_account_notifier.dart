@@ -14,6 +14,10 @@ class ManageUserAccountNotifier extends StateNotifier<ManageUserAccountState> {
   ManageUserAccountNotifier(this.iAuthRepository)
       : super(const ManageUserAccountState.initial());
 
+  void started() {
+    state = const ManageUserAccountState.initial();
+  }
+
   void currentPasswordChanged(String password) {
     final currentState = state;
     if (currentState is ChangePassword) {
@@ -127,6 +131,8 @@ class ManageUserAccountNotifier extends StateNotifier<ManageUserAccountState> {
       final newUsername = currentState.newUsername;
 
       if (currentUsername.isValid() && newUsername.isValid()) {
+        print("this is current ${currentUsername.value}");
+        print("this is ${newUsername.value}");
         state = currentState.copyWith(
           isSubmitting: true,
           authFailureOrSuccessOption: none(),
