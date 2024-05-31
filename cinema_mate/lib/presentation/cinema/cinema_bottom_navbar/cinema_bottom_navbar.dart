@@ -1,13 +1,13 @@
-// import 'package:cinema_mate/application/cinema/bottom_nav_bar/bottom_nav_bar_bloc.dart';
-// import 'package:cinema_mate/presentation/cinema/add_movie/add_movie_widget.dart';
-// import 'package:cinema_mate/presentation/cinema/home/cinema_home_page.dart';
 import 'package:cinema_mate/application/cinema/bottom_nav_bar/bottom_nav_bar_provider.dart';
+import 'package:cinema_mate/application/cinema/bottom_nav_bar/bottom_nav_bar_state.dart';
 import 'package:cinema_mate/presentation/cinema/add_movie/add_movie_widget.dart';
 import 'package:cinema_mate/presentation/cinema/home/cinema_home_page.dart';
+import 'package:cinema_mate/presentation/cinema/home/cinema_home_widget.dart';
+import 'package:cinema_mate/presentation/cinema/profile/cinema_profile_page_widget.dart';
 import 'package:cinema_mate/presentation/core/widgets/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 final newColor = AppColor();
@@ -38,7 +38,7 @@ class CinemaBottomNavbarWidget extends ConsumerWidget {
           initial: () => const CinemaHomePage(),
           homePage: () => const CinemaHomePage(),
           addMoviePage: () => const AddMovieWidget(),
-          cinemaProfilePage: () => Container()),
+          cinemaProfilePage: () => const CinemaProfilePageWidget()),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: bottonState.when(
             initial: () => 0,

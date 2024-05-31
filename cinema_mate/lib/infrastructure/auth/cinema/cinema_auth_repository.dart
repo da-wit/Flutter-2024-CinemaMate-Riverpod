@@ -79,17 +79,16 @@ class CinemaAuthRepository implements ICinemaAuthRepository {
         cinemaToken: UserTokenDto(token: userToken!));
   }
 
+// removed required Cinema nema
   @override
   Future<Either<CinemaAuthFailure, Unit>> changeCinemaName(
-      {required CinemaName currentUsername,
-      required CinemaName newUsername}) async {
+      {required CinemaName newUsername}) async {
     final cinemaToken = await secureStorage.read(key: "cinematoken");
     if (cinemaToken == null) {
       return left(const CinemaAuthFailure.serverError());
     }
 
     final result = await _apiImplementations.changeCinemaName(
-      currentCinemaName: currentUsername.getOrCrash(),
       newCinemaName: newUsername.getOrCrash(),
       cinemaToken: UserTokenDto(token: cinemaToken),
     );
@@ -99,6 +98,22 @@ class CinemaAuthRepository implements ICinemaAuthRepository {
       (r) => right(unit),
     );
   }
+  //     {required CinemaName newUsername}) async {
+  //   final cinemaToken = await secureStorage.read(key: "cinematoken");
+  //   if (cinemaToken == null) {
+  //     return left(const CinemaAuthFailure.serverError());
+  //   }
+
+  //   final result = await _apiImplementations.changeCinemaName(
+  //     newCinemaName: newUsername.getOrCrash(),
+  //     cinemaToken: UserTokenDto(token: cinemaToken),
+  //   );
+
+  //   return result.fold(
+  //     (failure) => left(failure),
+  //     (r) => right(unit),
+  //   );
+  // }
 
   @override
   Future<Either<CinemaAuthFailure, Unit>> changeEmail(
@@ -177,5 +192,3 @@ class CinemaAuthRepository implements ICinemaAuthRepository {
 //       (r) => right(unit),
 //     );
 //   }
-
-

@@ -8,11 +8,6 @@ class AddMoviePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // BlocProvider(
-        //   create: (context) => getIt<MovieBloc>(),
-        //   child: const AddMovieWidget(),
-        // );
-        const AddMovieWidget();
+    return const AddMovieWidget();
   }
 }

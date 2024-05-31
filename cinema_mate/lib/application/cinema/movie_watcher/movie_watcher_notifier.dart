@@ -15,21 +15,45 @@ class MovieWatcherNotifier extends StateNotifier<MovieWatcherState> {
   void onWatchAllMoviesStarted() {
     state = const MovieWatcherState.loading();
 
-    iMovieRepository.watchAll().listen(
-      (failureOrMovies) {
-        state = failureOrMovies.fold(
-          (failure) => MovieWatcherState.loadFailure(failure),
-          (movies) => MovieWatcherState.loadSuccess(movies),
-        );
-      },
-    );
+    iMovieRepository.watchAll().listen((failureOrMovies) {
+      _onMoviesRecieved(failureOrMovies);
+    });
   }
 
-  void onMoviesRecieved(
+  void _onMoviesRecieved(
       Either<MovieFailure, KtList<MovieInfo>> failureOrMovies) {
     state = failureOrMovies.fold(
       (failure) => MovieWatcherState.loadFailure(failure),
       (movies) => MovieWatcherState.loadSuccess(movies),
     );
   }
+
+  // void onWatchAllMoviesStarted() {
+  //   state = const MovieWatcherState.loading();
+  //   print('started');
+
+  //   try {
+  //     iMovieRepository.watchAll().listen((failureOrMovies) {
+  //       print('LALALS');
+  //       state = failureOrMovies.fold(
+  //         (failure) => MovieWatcherState.loadFailure(failure),
+  //         (movies) => MovieWatcherState.loadSuccess(movies),
+  //       );
+  //     }, onError: () {
+  //       print('Error');
+  //     }, onDone: () {
+  //       print('Done');
+  //     });
+  //   } catch (e) {
+  //     print('uuuuu error');
+  //   }
+  // }
+
+  // void onMoviesRecieved(
+  //     Either<MovieFailure, KtList<MovieInfo>> failureOrMovies) {
+  //   state = failureOrMovies.fold(
+  //     (failure) => MovieWatcherState.loadFailure(failure),
+  //     (movies) => MovieWatcherState.loadSuccess(movies),
+  //   );
+  // }
 }

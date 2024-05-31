@@ -76,6 +76,7 @@ class CinemaSignInForm extends ConsumerWidget {
                   child: Column(
                     children: [
                       TextFormField(
+                          key: const Key('CinemaEmail'),
                           style: const TextStyle(color: Colors.white),
                           decoration: const InputDecoration(
                             prefixIcon: Icon(
@@ -96,6 +97,7 @@ class CinemaSignInForm extends ConsumerWidget {
                               (right) => null)),
                       const SizedBox(height: 10),
                       TextFormField(
+                          key: const Key('CinemaPassword'),
                           style: const TextStyle(color: Colors.white),
                           decoration: const InputDecoration(
                             prefixIcon: Icon(
@@ -119,6 +121,7 @@ class CinemaSignInForm extends ConsumerWidget {
                                   (right) => null)),
                       const SizedBox(height: 30),
                       AppButton(
+                        key: const Key('CinemaSignInButton'),
                         title: 'Sign in',
                         width: 200,
                         onPressed: () {
