@@ -17,7 +17,6 @@ class CinemaHomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final movieWatchNotifier = ref.read(movieWatcherProvider.notifier);
 
-    // movieWatchNotifier.onWatchAllMoviesStarted();
     Future.microtask(() {
       movieWatchNotifier.onWatchAllMoviesStarted();
     });

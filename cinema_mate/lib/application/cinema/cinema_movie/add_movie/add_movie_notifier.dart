@@ -12,53 +12,55 @@ class AddMovieNotifier extends StateNotifier<AddMovieState> {
   final IAddMovierepository iAddMovierepository;
   AddMovieNotifier(this.iAddMovierepository) : super(AddMovieState.initial());
 
+  AddMovieState get testState => state;
+
   void onInitialized() {
     state = AddMovieState.initial();
   }
 
-  void onTitleChanged({required String title}) {
+  onTitleChanged({required String title}) {
     state = state.copyWith(
       title: title,
       addFailureOrSuccessOption: none(),
     );
   }
 
-  void onGenreChanged(String genre) {
+  onGenreChanged(String genre) {
     state = state.copyWith(
       genre: genre,
       addFailureOrSuccessOption: none(),
     );
   }
 
-  void onNumberOdSeatesChanged({required int numberOfSeats}) {
+  onNumberOdSeatesChanged({required int numberOfSeats}) {
     state = state.copyWith(
       numberOfSeats: numberOfSeats,
       addFailureOrSuccessOption: none(),
     );
   }
 
-  void onDateChanged({required DateTime date}) {
+  onDateChanged({required DateTime date}) {
     state = state.copyWith(
       date: Date(date),
       addFailureOrSuccessOption: none(),
     );
   }
 
-  void onTimeChanged({required time}) {
+  onTimeChanged({required time}) {
     state = state.copyWith(
       time: Time(time),
       addFailureOrSuccessOption: none(),
     );
   }
 
-  void onImageChanged({required File imagePath}) {
+  onImageChanged({required File imagePath}) {
     state = state.copyWith(
       image: imagePath,
       addFailureOrSuccessOption: none(),
     );
   }
 
-  void onAddMoviePressed() async {
+  onAddMoviePressed() async {
     state = state.copyWith(
         showErrorMessages: true, addFailureOrSuccessOption: none());
     final isTitleValid = state.title.isNotEmpty;

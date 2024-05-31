@@ -8,6 +8,8 @@ class UserAuthNotifier extends StateNotifier<UserAuthState> {
   final IAuthRepository iAuthRepository;
   UserAuthNotifier(this.iAuthRepository) : super(const Initial());
 
+  UserAuthState get testState => state;
+
   onAuthCheckRequested() async {
     final userOption = await iAuthRepository.getSignedInUser();
 

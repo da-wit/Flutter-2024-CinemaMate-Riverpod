@@ -34,9 +34,7 @@ class CinemaRegistrationForm extends ConsumerWidget {
             );
           },
           (right) {
-            print('Hello world');
-            print('Hello world');
-            print('Hello world');
+            context.go('/cinema/login');
           },
         ),
       );

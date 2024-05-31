@@ -13,6 +13,8 @@ class RegisterFormNorifier extends StateNotifier<RegisterFormState> {
   RegisterFormNorifier(this.iAuthRepository)
       : super(RegisterFormState.initial());
 
+  RegisterFormState get testState => state;
+
   void onUserNameChnaged({
     required String userName,
   }) {
@@ -47,7 +49,7 @@ class RegisterFormNorifier extends StateNotifier<RegisterFormState> {
     );
   }
 
-  void onRegisterWithEmailAndPasswordPressed() async {
+  onRegisterWithEmailAndPasswordPressed() async {
     Either<AuthFailure, Unit>? failureOrSuccess;
 
     final isEmailValid = state.emailAddress.isValid();

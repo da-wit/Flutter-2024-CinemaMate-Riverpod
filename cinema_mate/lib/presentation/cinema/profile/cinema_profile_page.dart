@@ -6,20 +6,6 @@ class CinemaProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // MultiBlocProvider(
-        //   providers: [
-        //     BlocProvider(
-        //       create: (context) => getIt<CinemaAuthBloc>(),
-        //     ),
-        //     BlocProvider(
-        //       create: (context) => getIt<CinemaProfileCheckerBloc>()
-        //         ..add(
-        //           const CinemaProfileCheckerEvent.fetchCinemaDetails(),
-        //         ),
-        //     )
-        //   ],
-        //   child: const CinemaProfilePageWidget(),
-        const CinemaProfilePageWidget();
+    return const CinemaProfilePageWidget();
   }
 }

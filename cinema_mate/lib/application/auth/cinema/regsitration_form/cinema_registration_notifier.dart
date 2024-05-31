@@ -12,6 +12,7 @@ class CinemaRegistrationNotifier
   final ICinemaAuthRepository iCinemaAuthRepository;
   CinemaRegistrationNotifier(this.iCinemaAuthRepository)
       : super(CinemaRegistrationState.initial());
+  CinemaRegistrationState get testState => state;
 
   void onCinemaNameChanged({required String cinemaName}) {
     state = state.copyWith(
@@ -41,7 +42,7 @@ class CinemaRegistrationNotifier
     );
   }
 
-  void onRegisterWithEmailAndPassword() async {
+  onRegisterWithEmailAndPassword() async {
     Either<CinemaAuthFailure, Unit>? failureOrSuccess;
 
     final isEmailValid = state.email.isValid();

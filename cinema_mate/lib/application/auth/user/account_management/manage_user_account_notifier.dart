@@ -138,8 +138,11 @@ class ManageUserAccountNotifier extends StateNotifier<ManageUserAccountState> {
           authFailureOrSuccessOption: none(),
         );
 
-        failureOrSuccess = await iAuthRepository.changeUsername(
-            currentUsername: currentUsername, newUsername: newUsername);
+        failureOrSuccess =
+            await iAuthRepository.changeUsername(newUsername: newUsername);
+
+        // .changeUsername(
+        //     currentUsername: currentUsername, newUsername: newUsername);
 
         state = currentState.copyWith(
           isSubmitting: false,

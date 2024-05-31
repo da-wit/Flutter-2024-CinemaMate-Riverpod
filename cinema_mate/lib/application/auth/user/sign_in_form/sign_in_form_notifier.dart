@@ -13,6 +13,8 @@ class SignInFormNotifier extends StateNotifier<SignInFormState> {
 
   SignInFormNotifier(this.iAuthRepository) : super(SignInFormState.initial());
 
+  SignInFormState get testState => state;
+
   void onEmailChanged({
     required String email,
   }) {
@@ -31,7 +33,7 @@ class SignInFormNotifier extends StateNotifier<SignInFormState> {
     );
   }
 
-  void onSignInWithEmailAndPasswordPressed() async {
+  onSignInWithEmailAndPasswordPressed() async {
     Either<AuthFailure, UserToken>? failureOrSuccess;
     Either<AuthFailure, Unit>? failureOrSuccessResult;
 

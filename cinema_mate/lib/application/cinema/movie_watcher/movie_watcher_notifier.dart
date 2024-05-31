@@ -12,6 +12,8 @@ class MovieWatcherNotifier extends StateNotifier<MovieWatcherState> {
   final IMovieRepository iMovieRepository;
   MovieWatcherNotifier(this.iMovieRepository) : super(const Initial());
 
+  MovieWatcherState get testState => state;
+
   void onWatchAllMoviesStarted() {
     state = const MovieWatcherState.loading();
 

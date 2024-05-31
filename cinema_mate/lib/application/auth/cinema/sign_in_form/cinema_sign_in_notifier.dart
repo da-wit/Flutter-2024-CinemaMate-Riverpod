@@ -14,6 +14,8 @@ class CinemaSignInNotifier extends StateNotifier<CinemaSignInState> {
   CinemaSignInNotifier(this.iCinemaAuthRepository)
       : super(CinemaSignInState.initial());
 
+  CinemaSignInState get testState => state;
+
   void onEmailChanged({required String email}) {
     state = state.copyWith(
       email: EmailAddress(email),
@@ -28,7 +30,7 @@ class CinemaSignInNotifier extends StateNotifier<CinemaSignInState> {
     );
   }
 
-  void onSignInWithEmailAndPasswordPressed() async {
+  onSignInWithEmailAndPasswordPressed() async {
     Either<CinemaAuthFailure, UserToken>? faliureOrSuccess;
     Either<CinemaAuthFailure, Unit>? faliureOrSuccessResult;
 

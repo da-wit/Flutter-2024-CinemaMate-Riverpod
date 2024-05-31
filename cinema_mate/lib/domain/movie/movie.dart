@@ -44,6 +44,22 @@ abstract class MovieInfo implements _$MovieInfo {
 }
 
 @freezed
+abstract class UserMovieInfo implements _$UserMovieInfo {
+  const UserMovieInfo._();
+
+  const factory UserMovieInfo({
+    required int id,
+    required String name,
+    required String date,
+    required String time,
+    required List<String> genre,
+    required int numberOfSeats,
+    required String image,
+    required bool isFavorited,
+  }) = _UserMovieInfo;
+}
+
+@freezed
 class EditMovie with _$EditMovie {
   const EditMovie._();
 

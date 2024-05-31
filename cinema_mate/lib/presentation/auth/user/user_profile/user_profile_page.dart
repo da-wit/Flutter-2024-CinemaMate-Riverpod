@@ -1,4 +1,4 @@
-import 'package:cinema_mate/presentation/auth/user/user_profile/user_profile.dart';
+// import 'package:cinema_mate/presentation/auth/user/user_profile/user_profile.dart';
 import 'package:cinema_mate/presentation/core/widgets/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +11,7 @@ class UserProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: newColor.bg,
-      body: const UserProfile(),
+      body: Container(),
     );
   }
 }

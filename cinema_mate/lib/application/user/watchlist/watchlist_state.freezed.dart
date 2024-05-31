@@ -21,10 +21,11 @@ mixin _$WatchlistState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
     required TResult Function() unlikeSuccess,
     required TResult Function() removeSuccess,
     required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
-    required TResult Function(WatchlistFailure noteFailure) loadFailure,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,10 +33,11 @@ mixin _$WatchlistState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
     TResult? Function()? unlikeSuccess,
     TResult? Function()? removeSuccess,
     TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult? Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,10 +45,11 @@ mixin _$WatchlistState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
     TResult Function()? unlikeSuccess,
     TResult Function()? removeSuccess,
     TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,8 @@ mixin _$WatchlistState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
     required TResult Function(UnlikeSuccess value) unlikeSuccess,
     required TResult Function(RemoveSuccess value) removeSuccess,
     required TResult Function(LoadSuccess value) loadSuccess,
@@ -66,6 +71,7 @@ mixin _$WatchlistState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult? Function(UnlikeSuccess value)? unlikeSuccess,
     TResult? Function(RemoveSuccess value)? removeSuccess,
     TResult? Function(LoadSuccess value)? loadSuccess,
@@ -77,6 +83,7 @@ mixin _$WatchlistState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult Function(UnlikeSuccess value)? unlikeSuccess,
     TResult Function(RemoveSuccess value)? removeSuccess,
     TResult Function(LoadSuccess value)? loadSuccess,
@@ -145,10 +152,11 @@ class _$InitialImpl implements Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
     required TResult Function() unlikeSuccess,
     required TResult Function() removeSuccess,
     required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
-    required TResult Function(WatchlistFailure noteFailure) loadFailure,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
   }) {
     return initial();
   }
@@ -159,10 +167,11 @@ class _$InitialImpl implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
     TResult? Function()? unlikeSuccess,
     TResult? Function()? removeSuccess,
     TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult? Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -173,10 +182,11 @@ class _$InitialImpl implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
     TResult Function()? unlikeSuccess,
     TResult Function()? removeSuccess,
     TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -191,6 +201,8 @@ class _$InitialImpl implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
     required TResult Function(UnlikeSuccess value) unlikeSuccess,
     required TResult Function(RemoveSuccess value) removeSuccess,
     required TResult Function(LoadSuccess value) loadSuccess,
@@ -205,6 +217,7 @@ class _$InitialImpl implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult? Function(UnlikeSuccess value)? unlikeSuccess,
     TResult? Function(RemoveSuccess value)? removeSuccess,
     TResult? Function(LoadSuccess value)? loadSuccess,
@@ -219,6 +232,7 @@ class _$InitialImpl implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult Function(UnlikeSuccess value)? unlikeSuccess,
     TResult Function(RemoveSuccess value)? removeSuccess,
     TResult Function(LoadSuccess value)? loadSuccess,
@@ -277,10 +291,11 @@ class _$LoadingImpl implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
     required TResult Function() unlikeSuccess,
     required TResult Function() removeSuccess,
     required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
-    required TResult Function(WatchlistFailure noteFailure) loadFailure,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
   }) {
     return loading();
   }
@@ -291,10 +306,11 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
     TResult? Function()? unlikeSuccess,
     TResult? Function()? removeSuccess,
     TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult? Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
   }) {
     return loading?.call();
   }
@@ -305,10 +321,11 @@ class _$LoadingImpl implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
     TResult Function()? unlikeSuccess,
     TResult Function()? removeSuccess,
     TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -323,6 +340,8 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
     required TResult Function(UnlikeSuccess value) unlikeSuccess,
     required TResult Function(RemoveSuccess value) removeSuccess,
     required TResult Function(LoadSuccess value) loadSuccess,
@@ -337,6 +356,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult? Function(UnlikeSuccess value)? unlikeSuccess,
     TResult? Function(RemoveSuccess value)? removeSuccess,
     TResult? Function(LoadSuccess value)? loadSuccess,
@@ -351,6 +371,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult Function(UnlikeSuccess value)? unlikeSuccess,
     TResult Function(RemoveSuccess value)? removeSuccess,
     TResult Function(LoadSuccess value)? loadSuccess,
@@ -409,10 +430,11 @@ class _$AddSuccessImpl implements AddSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
     required TResult Function() unlikeSuccess,
     required TResult Function() removeSuccess,
     required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
-    required TResult Function(WatchlistFailure noteFailure) loadFailure,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
   }) {
     return addSuccess();
   }
@@ -423,10 +445,11 @@ class _$AddSuccessImpl implements AddSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
     TResult? Function()? unlikeSuccess,
     TResult? Function()? removeSuccess,
     TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult? Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
   }) {
     return addSuccess?.call();
   }
@@ -437,10 +460,11 @@ class _$AddSuccessImpl implements AddSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
     TResult Function()? unlikeSuccess,
     TResult Function()? removeSuccess,
     TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (addSuccess != null) {
@@ -455,6 +479,8 @@ class _$AddSuccessImpl implements AddSuccess {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
     required TResult Function(UnlikeSuccess value) unlikeSuccess,
     required TResult Function(RemoveSuccess value) removeSuccess,
     required TResult Function(LoadSuccess value) loadSuccess,
@@ -469,6 +495,7 @@ class _$AddSuccessImpl implements AddSuccess {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult? Function(UnlikeSuccess value)? unlikeSuccess,
     TResult? Function(RemoveSuccess value)? removeSuccess,
     TResult? Function(LoadSuccess value)? loadSuccess,
@@ -483,6 +510,7 @@ class _$AddSuccessImpl implements AddSuccess {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult Function(UnlikeSuccess value)? unlikeSuccess,
     TResult Function(RemoveSuccess value)? removeSuccess,
     TResult Function(LoadSuccess value)? loadSuccess,
@@ -498,6 +526,148 @@ class _$AddSuccessImpl implements AddSuccess {
 
 abstract class AddSuccess implements WatchlistState {
   const factory AddSuccess() = _$AddSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$MovieAlreadyInWatchlistImplCopyWith<$Res> {
+  factory _$$MovieAlreadyInWatchlistImplCopyWith(
+          _$MovieAlreadyInWatchlistImpl value,
+          $Res Function(_$MovieAlreadyInWatchlistImpl) then) =
+      __$$MovieAlreadyInWatchlistImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MovieAlreadyInWatchlistImplCopyWithImpl<$Res>
+    extends _$WatchlistStateCopyWithImpl<$Res, _$MovieAlreadyInWatchlistImpl>
+    implements _$$MovieAlreadyInWatchlistImplCopyWith<$Res> {
+  __$$MovieAlreadyInWatchlistImplCopyWithImpl(
+      _$MovieAlreadyInWatchlistImpl _value,
+      $Res Function(_$MovieAlreadyInWatchlistImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MovieAlreadyInWatchlistImpl implements MovieAlreadyInWatchlist {
+  const _$MovieAlreadyInWatchlistImpl();
+
+  @override
+  String toString() {
+    return 'WatchlistState.movieAlreadyInWatchlist()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MovieAlreadyInWatchlistImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
+    required TResult Function() unlikeSuccess,
+    required TResult Function() removeSuccess,
+    required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
+  }) {
+    return movieAlreadyInWatchlist();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
+    TResult? Function()? unlikeSuccess,
+    TResult? Function()? removeSuccess,
+    TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
+  }) {
+    return movieAlreadyInWatchlist?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
+    TResult Function()? unlikeSuccess,
+    TResult Function()? removeSuccess,
+    TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
+    required TResult orElse(),
+  }) {
+    if (movieAlreadyInWatchlist != null) {
+      return movieAlreadyInWatchlist();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
+    required TResult Function(UnlikeSuccess value) unlikeSuccess,
+    required TResult Function(RemoveSuccess value) removeSuccess,
+    required TResult Function(LoadSuccess value) loadSuccess,
+    required TResult Function(LoadFailure value) loadFailure,
+  }) {
+    return movieAlreadyInWatchlist(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
+    TResult? Function(UnlikeSuccess value)? unlikeSuccess,
+    TResult? Function(RemoveSuccess value)? removeSuccess,
+    TResult? Function(LoadSuccess value)? loadSuccess,
+    TResult? Function(LoadFailure value)? loadFailure,
+  }) {
+    return movieAlreadyInWatchlist?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
+    TResult Function(UnlikeSuccess value)? unlikeSuccess,
+    TResult Function(RemoveSuccess value)? removeSuccess,
+    TResult Function(LoadSuccess value)? loadSuccess,
+    TResult Function(LoadFailure value)? loadFailure,
+    required TResult orElse(),
+  }) {
+    if (movieAlreadyInWatchlist != null) {
+      return movieAlreadyInWatchlist(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MovieAlreadyInWatchlist implements WatchlistState {
+  const factory MovieAlreadyInWatchlist() = _$MovieAlreadyInWatchlistImpl;
 }
 
 /// @nodoc
@@ -541,10 +711,11 @@ class _$UnlikeSuccessImpl implements UnlikeSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
     required TResult Function() unlikeSuccess,
     required TResult Function() removeSuccess,
     required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
-    required TResult Function(WatchlistFailure noteFailure) loadFailure,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
   }) {
     return unlikeSuccess();
   }
@@ -555,10 +726,11 @@ class _$UnlikeSuccessImpl implements UnlikeSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
     TResult? Function()? unlikeSuccess,
     TResult? Function()? removeSuccess,
     TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult? Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
   }) {
     return unlikeSuccess?.call();
   }
@@ -569,10 +741,11 @@ class _$UnlikeSuccessImpl implements UnlikeSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
     TResult Function()? unlikeSuccess,
     TResult Function()? removeSuccess,
     TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (unlikeSuccess != null) {
@@ -587,6 +760,8 @@ class _$UnlikeSuccessImpl implements UnlikeSuccess {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
     required TResult Function(UnlikeSuccess value) unlikeSuccess,
     required TResult Function(RemoveSuccess value) removeSuccess,
     required TResult Function(LoadSuccess value) loadSuccess,
@@ -601,6 +776,7 @@ class _$UnlikeSuccessImpl implements UnlikeSuccess {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult? Function(UnlikeSuccess value)? unlikeSuccess,
     TResult? Function(RemoveSuccess value)? removeSuccess,
     TResult? Function(LoadSuccess value)? loadSuccess,
@@ -615,6 +791,7 @@ class _$UnlikeSuccessImpl implements UnlikeSuccess {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult Function(UnlikeSuccess value)? unlikeSuccess,
     TResult Function(RemoveSuccess value)? removeSuccess,
     TResult Function(LoadSuccess value)? loadSuccess,
@@ -673,10 +850,11 @@ class _$RemoveSuccessImpl implements RemoveSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
     required TResult Function() unlikeSuccess,
     required TResult Function() removeSuccess,
     required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
-    required TResult Function(WatchlistFailure noteFailure) loadFailure,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
   }) {
     return removeSuccess();
   }
@@ -687,10 +865,11 @@ class _$RemoveSuccessImpl implements RemoveSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
     TResult? Function()? unlikeSuccess,
     TResult? Function()? removeSuccess,
     TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult? Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
   }) {
     return removeSuccess?.call();
   }
@@ -701,10 +880,11 @@ class _$RemoveSuccessImpl implements RemoveSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
     TResult Function()? unlikeSuccess,
     TResult Function()? removeSuccess,
     TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (removeSuccess != null) {
@@ -719,6 +899,8 @@ class _$RemoveSuccessImpl implements RemoveSuccess {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
     required TResult Function(UnlikeSuccess value) unlikeSuccess,
     required TResult Function(RemoveSuccess value) removeSuccess,
     required TResult Function(LoadSuccess value) loadSuccess,
@@ -733,6 +915,7 @@ class _$RemoveSuccessImpl implements RemoveSuccess {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult? Function(UnlikeSuccess value)? unlikeSuccess,
     TResult? Function(RemoveSuccess value)? removeSuccess,
     TResult? Function(LoadSuccess value)? loadSuccess,
@@ -747,6 +930,7 @@ class _$RemoveSuccessImpl implements RemoveSuccess {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult Function(UnlikeSuccess value)? unlikeSuccess,
     TResult Function(RemoveSuccess value)? removeSuccess,
     TResult Function(LoadSuccess value)? loadSuccess,
@@ -839,10 +1023,11 @@ class _$LoadSuccessImpl implements LoadSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
     required TResult Function() unlikeSuccess,
     required TResult Function() removeSuccess,
     required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
-    required TResult Function(WatchlistFailure noteFailure) loadFailure,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
   }) {
     return loadSuccess(watchlistMovies);
   }
@@ -853,10 +1038,11 @@ class _$LoadSuccessImpl implements LoadSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
     TResult? Function()? unlikeSuccess,
     TResult? Function()? removeSuccess,
     TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult? Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
   }) {
     return loadSuccess?.call(watchlistMovies);
   }
@@ -867,10 +1053,11 @@ class _$LoadSuccessImpl implements LoadSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
     TResult Function()? unlikeSuccess,
     TResult Function()? removeSuccess,
     TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -885,6 +1072,8 @@ class _$LoadSuccessImpl implements LoadSuccess {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
     required TResult Function(UnlikeSuccess value) unlikeSuccess,
     required TResult Function(RemoveSuccess value) removeSuccess,
     required TResult Function(LoadSuccess value) loadSuccess,
@@ -899,6 +1088,7 @@ class _$LoadSuccessImpl implements LoadSuccess {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult? Function(UnlikeSuccess value)? unlikeSuccess,
     TResult? Function(RemoveSuccess value)? removeSuccess,
     TResult? Function(LoadSuccess value)? loadSuccess,
@@ -913,6 +1103,7 @@ class _$LoadSuccessImpl implements LoadSuccess {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult Function(UnlikeSuccess value)? unlikeSuccess,
     TResult Function(RemoveSuccess value)? removeSuccess,
     TResult Function(LoadSuccess value)? loadSuccess,
@@ -942,9 +1133,9 @@ abstract class _$$LoadFailureImplCopyWith<$Res> {
           _$LoadFailureImpl value, $Res Function(_$LoadFailureImpl) then) =
       __$$LoadFailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({WatchlistFailure noteFailure});
+  $Res call({WatchlistFailure watchlistFailure});
 
-  $WatchlistFailureCopyWith<$Res> get noteFailure;
+  $WatchlistFailureCopyWith<$Res> get watchlistFailure;
 }
 
 /// @nodoc
@@ -958,21 +1149,21 @@ class __$$LoadFailureImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteFailure = null,
+    Object? watchlistFailure = null,
   }) {
     return _then(_$LoadFailureImpl(
-      null == noteFailure
-          ? _value.noteFailure
-          : noteFailure // ignore: cast_nullable_to_non_nullable
+      null == watchlistFailure
+          ? _value.watchlistFailure
+          : watchlistFailure // ignore: cast_nullable_to_non_nullable
               as WatchlistFailure,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $WatchlistFailureCopyWith<$Res> get noteFailure {
-    return $WatchlistFailureCopyWith<$Res>(_value.noteFailure, (value) {
-      return _then(_value.copyWith(noteFailure: value));
+  $WatchlistFailureCopyWith<$Res> get watchlistFailure {
+    return $WatchlistFailureCopyWith<$Res>(_value.watchlistFailure, (value) {
+      return _then(_value.copyWith(watchlistFailure: value));
     });
   }
 }
@@ -980,14 +1171,14 @@ class __$$LoadFailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadFailureImpl implements LoadFailure {
-  const _$LoadFailureImpl(this.noteFailure);
+  const _$LoadFailureImpl(this.watchlistFailure);
 
   @override
-  final WatchlistFailure noteFailure;
+  final WatchlistFailure watchlistFailure;
 
   @override
   String toString() {
-    return 'WatchlistState.loadFailure(noteFailure: $noteFailure)';
+    return 'WatchlistState.loadFailure(watchlistFailure: $watchlistFailure)';
   }
 
   @override
@@ -995,12 +1186,12 @@ class _$LoadFailureImpl implements LoadFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadFailureImpl &&
-            (identical(other.noteFailure, noteFailure) ||
-                other.noteFailure == noteFailure));
+            (identical(other.watchlistFailure, watchlistFailure) ||
+                other.watchlistFailure == watchlistFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, noteFailure);
+  int get hashCode => Object.hash(runtimeType, watchlistFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -1014,12 +1205,13 @@ class _$LoadFailureImpl implements LoadFailure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() addSuccess,
+    required TResult Function() movieAlreadyInWatchlist,
     required TResult Function() unlikeSuccess,
     required TResult Function() removeSuccess,
     required TResult Function(List<WatchlistMovie> watchlistMovies) loadSuccess,
-    required TResult Function(WatchlistFailure noteFailure) loadFailure,
+    required TResult Function(WatchlistFailure watchlistFailure) loadFailure,
   }) {
-    return loadFailure(noteFailure);
+    return loadFailure(watchlistFailure);
   }
 
   @override
@@ -1028,12 +1220,13 @@ class _$LoadFailureImpl implements LoadFailure {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? addSuccess,
+    TResult? Function()? movieAlreadyInWatchlist,
     TResult? Function()? unlikeSuccess,
     TResult? Function()? removeSuccess,
     TResult? Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult? Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult? Function(WatchlistFailure watchlistFailure)? loadFailure,
   }) {
-    return loadFailure?.call(noteFailure);
+    return loadFailure?.call(watchlistFailure);
   }
 
   @override
@@ -1042,14 +1235,15 @@ class _$LoadFailureImpl implements LoadFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? addSuccess,
+    TResult Function()? movieAlreadyInWatchlist,
     TResult Function()? unlikeSuccess,
     TResult Function()? removeSuccess,
     TResult Function(List<WatchlistMovie> watchlistMovies)? loadSuccess,
-    TResult Function(WatchlistFailure noteFailure)? loadFailure,
+    TResult Function(WatchlistFailure watchlistFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
-      return loadFailure(noteFailure);
+      return loadFailure(watchlistFailure);
     }
     return orElse();
   }
@@ -1060,6 +1254,8 @@ class _$LoadFailureImpl implements LoadFailure {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(AddSuccess value) addSuccess,
+    required TResult Function(MovieAlreadyInWatchlist value)
+        movieAlreadyInWatchlist,
     required TResult Function(UnlikeSuccess value) unlikeSuccess,
     required TResult Function(RemoveSuccess value) removeSuccess,
     required TResult Function(LoadSuccess value) loadSuccess,
@@ -1074,6 +1270,7 @@ class _$LoadFailureImpl implements LoadFailure {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(AddSuccess value)? addSuccess,
+    TResult? Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult? Function(UnlikeSuccess value)? unlikeSuccess,
     TResult? Function(RemoveSuccess value)? removeSuccess,
     TResult? Function(LoadSuccess value)? loadSuccess,
@@ -1088,6 +1285,7 @@ class _$LoadFailureImpl implements LoadFailure {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(AddSuccess value)? addSuccess,
+    TResult Function(MovieAlreadyInWatchlist value)? movieAlreadyInWatchlist,
     TResult Function(UnlikeSuccess value)? unlikeSuccess,
     TResult Function(RemoveSuccess value)? removeSuccess,
     TResult Function(LoadSuccess value)? loadSuccess,
@@ -1102,10 +1300,10 @@ class _$LoadFailureImpl implements LoadFailure {
 }
 
 abstract class LoadFailure implements WatchlistState {
-  const factory LoadFailure(final WatchlistFailure noteFailure) =
+  const factory LoadFailure(final WatchlistFailure watchlistFailure) =
       _$LoadFailureImpl;
 
-  WatchlistFailure get noteFailure;
+  WatchlistFailure get watchlistFailure;
   @JsonKey(ignore: true)
   _$$LoadFailureImplCopyWith<_$LoadFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;

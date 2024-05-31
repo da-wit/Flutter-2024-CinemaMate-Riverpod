@@ -6,6 +6,8 @@ import 'package:injectable/injectable.dart';
 class BottomNavBarNotifier extends StateNotifier<BottomNavBarState> {
   BottomNavBarNotifier() : super(const Initial());
 
+  BottomNavBarState get testState => state;
+
   void onHomeClicked() {
     state = const BottomNavBarState.homePage();
   }

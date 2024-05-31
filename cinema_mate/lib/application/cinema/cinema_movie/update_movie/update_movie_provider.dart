@@ -5,11 +5,6 @@ import 'package:cinema_mate/domain/movie/movie.dart';
 import 'package:cinema_mate/injection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// final updateMovieProvider =
-//     StateNotifierProvider<UpdateMovieNotifier, UpdateMovieState>((ref) {
-//     final movie = getIt.get<MovieInfo>();
-//   return getIt<UpdateMovieNotifier(movie)>();
-// });
 final updateMovieProvider = StateNotifierProvider.family<UpdateMovieNotifier,
     UpdateMovieState, MovieInfo>((ref, movie) {
   final iUpdateMovierepository = getIt<IUpdateMovierepository>();

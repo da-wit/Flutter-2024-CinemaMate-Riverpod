@@ -9,12 +9,6 @@ class CinemaBottomNavbarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // BlocProvider(
-        //   create: (context) =>
-        //       getIt<BottomNavBarBloc>()..add(const BottomNavBarEvent.homeClicked()),
-        //   child: const CinemaBottomNavbarWidget(),
-        // );
-        const CinemaBottomNavbarWidget();
+    return const CinemaBottomNavbarWidget();
   }
 }

@@ -1,8 +1,8 @@
 import 'package:cinema_mate/application/cinema/bottom_nav_bar/bottom_nav_bar_provider.dart';
-import 'package:cinema_mate/application/cinema/bottom_nav_bar/bottom_nav_bar_state.dart';
+import 'package:cinema_mate/application/cinema/cinema_profile/profile_checker/cinema_profile_checker_provider.dart';
 import 'package:cinema_mate/presentation/cinema/add_movie/add_movie_widget.dart';
 import 'package:cinema_mate/presentation/cinema/home/cinema_home_page.dart';
-import 'package:cinema_mate/presentation/cinema/home/cinema_home_widget.dart';
+
 import 'package:cinema_mate/presentation/cinema/profile/cinema_profile_page_widget.dart';
 import 'package:cinema_mate/presentation/core/widgets/app_color.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +19,8 @@ class CinemaBottomNavbarWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final bottonNotifier = ref.read(bottomNavBarProvider.notifier);
     final bottonState = ref.watch(bottomNavBarProvider);
+    final cinemaProfileCheckerNotifier =
+        ref.read(cinemaProfileCheckerProvider.notifier);
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
@@ -38,7 +40,10 @@ class CinemaBottomNavbarWidget extends ConsumerWidget {
           initial: () => const CinemaHomePage(),
           homePage: () => const CinemaHomePage(),
           addMoviePage: () => const AddMovieWidget(),
-          cinemaProfilePage: () => const CinemaProfilePageWidget()),
+          cinemaProfilePage: () {
+            cinemaProfileCheckerNotifier.onFetchCinemaDetails();
+            return const CinemaProfilePageWidget();
+          }),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: bottonState.when(
             initial: () => 0,

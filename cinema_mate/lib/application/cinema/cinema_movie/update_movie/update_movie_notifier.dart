@@ -1,7 +1,6 @@
 import 'package:cinema_mate/application/cinema/cinema_movie/update_movie/update_movie_state.dart';
 import 'package:cinema_mate/domain/crudMovie/update_movie/i_update_movie_repository.dart';
 import 'package:cinema_mate/domain/movie/movie.dart';
-import 'package:cinema_mate/injection.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:injectable/injectable.dart';

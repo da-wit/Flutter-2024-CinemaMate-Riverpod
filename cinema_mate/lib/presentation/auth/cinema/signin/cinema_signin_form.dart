@@ -1,3 +1,4 @@
+import 'package:cinema_mate/application/auth/cinema/cinema_auth_provider.dart';
 import 'package:cinema_mate/application/auth/cinema/sign_in_form/cinema_sign_in_provider.dart';
 import 'package:cinema_mate/application/auth/cinema/sign_in_form/cinema_sign_in_state.dart';
 import 'package:cinema_mate/presentation/core/widgets/app_color.dart';
@@ -16,6 +17,7 @@ class CinemaSignInForm extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cinemaSignInNotifier = ref.read(cinemaSignInProvider.notifier);
     final cinemaSignInState = ref.watch(cinemaSignInProvider);
+    final cinemaAuthNotifier = ref.read(cinemaAuthProvider.notifier);
 
     ref.listen<CinemaSignInState>(cinemaSignInProvider, (previous, next) {
       next.authFailureOrSuccessOption.fold(() {}, (either) {
@@ -38,6 +40,7 @@ class CinemaSignInForm extends ConsumerWidget {
           },
           (right) {
             context.go('/cinema/home');
+            cinemaAuthNotifier.onAuthCheckRequested();
           },
         );
       });
@@ -132,7 +135,29 @@ class CinemaSignInForm extends ConsumerWidget {
                       ),
                       const SizedBox(
                         height: 70,
-                      )
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Don't have an account? ",
+                            style: TextStyle(color: Colors.white, fontSize: 15),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              context.go('/registration');
+                            },
+                            child: const Text(
+                              'Register',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Colors.red,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

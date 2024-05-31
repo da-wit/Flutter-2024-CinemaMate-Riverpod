@@ -1,10 +1,13 @@
 import 'package:cinema_mate/application/role/role_provider.dart';
+import 'package:cinema_mate/application/role/role_state.dart';
 import 'package:cinema_mate/presentation/auth/cinema/registration/cinema_registration_form.dart';
 import 'package:cinema_mate/presentation/auth/user/registration/registration_form.dart';
 import 'package:cinema_mate/presentation/core/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/core/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:go_router/go_router.dart';
 
 var newColor = AppColor();
 
@@ -15,8 +18,6 @@ class RegistrationPageWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final roleNotifier = ref.read(roleProvider.notifier);
     final roleState = ref.watch(roleProvider);
-
-    // listener: (context, state) {});
     return Container(
       height: double.infinity,
       decoration: BoxDecoration(
@@ -39,25 +40,53 @@ class RegistrationPageWidget extends ConsumerWidget {
                 height: 30,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  AppButton(
-                    title: "As a user",
-                    width: 180,
-                    onPressed: () => roleNotifier.onUserClicked(),
-                  ),
-                  AppButton(
-                    title: "As a cinema",
-                    width: 180,
-                    onPressed: () => roleNotifier.onCinemaClicked(),
+                  GestureDetector(
+                    onTap: () {
+                      context.go('/admin/login');
+                    },
+                    child: const Text(
+                      'Admin',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   )
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  AppButton(
+                    title: "As a user",
+                    width: 150,
+                    buttonColor: roleState == const RoleState.user() ||
+                            roleState == const RoleState.initial()
+                        ? newColor.primary
+                        : newColor.bg,
+                    onPressed: () {
+                      roleNotifier.onUserClicked();
+                    },
+                  ),
+                  AppButton(
+                    title: "As a cinema",
+                    width: 170,
+                    buttonColor: roleState == const RoleState.cinema()
+                        ? newColor.primary
+                        : newColor.bg,
+                    onPressed: () {
+                      roleNotifier.onCinemaClicked();
+                    },
+                  )
+                ],
               ),
               roleState.maybeMap(
-                  initial: (value) => const UserRegistrationForm(),
+                  initial: (_) => const UserRegistrationForm(),
                   user: (value) => const UserRegistrationForm(),
                   cinema: (value) => const CinemaRegistrationForm(),
                   orElse: () => Container())

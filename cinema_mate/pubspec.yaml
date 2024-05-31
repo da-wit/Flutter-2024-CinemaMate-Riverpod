@@ -54,11 +54,14 @@ dependencies:
   transparent_image: ^2.0.1
   image_picker: ^1.1.1
   intl: ^0.19.0
+  carousel_slider: ^4.2.1
+  mocktail: ^1.0.3
+  mockito: ^5.4.4
+  state_notifier_test: ^0.0.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^5.0.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -70,6 +73,7 @@ dev_dependencies:
   injectable_generator: ^2.6.1
   json_serializable: ^6.8.0
   build_runner: ^2.4.10
+  riverpod_test: ^0.1.5
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

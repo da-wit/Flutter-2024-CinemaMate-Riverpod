@@ -26,6 +26,8 @@ class CinemaProfilePageWidget extends ConsumerWidget {
         ref.read(cinemaProfileCheckerProvider.notifier);
     final cinemaProfileCheckerState = ref.watch(cinemaProfileCheckerProvider);
 
+    cinemaProfileCheckerNotifier.onFetchCinemaDetails();
+
     ref.listen<CinemaAuthState>(cinemaAuthProvider, (previous, next) {
       next.maybeMap(
           unauthenticated: (_) {

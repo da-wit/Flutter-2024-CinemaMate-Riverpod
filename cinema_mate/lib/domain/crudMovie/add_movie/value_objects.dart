@@ -73,6 +73,8 @@ class Date extends ValueObject<DateTime> {
   }
 
   const Date._(this.value);
+
+  getOrElse(DateTime Function() param0) {}
 }
 
 class Time extends ValueObject<TimeOfDay> {

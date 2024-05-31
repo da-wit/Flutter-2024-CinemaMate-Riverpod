@@ -1,18 +1,36 @@
+import 'package:cinema_mate/application/auth/cinema/cinema_auth_provider.dart';
+import 'package:cinema_mate/application/auth/cinema/cinema_auth_state.dart';
+import 'package:cinema_mate/application/auth/user/user_auth_provider.dart';
+import 'package:cinema_mate/application/auth/user/user_auth_state.dart';
 import 'package:cinema_mate/presentation/core/widgets/app_color.dart';
 import 'package:cinema_mate/presentation/core/widgets/buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 var newcolor = AppColor();
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends ConsumerWidget {
   const SplashPage({super.key});
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen<CinemaAuthState>(cinemaAuthProvider, (previous, next) {
+      next.map(
+          initial: (_) {},
+          authenticated: (_) => context.go('/cinema/home'),
+          unauthenticated: (_) => context.go('/'));
+    });
+    ref.listen<UserAuthState>(userAuthProvider, (previous, next) {
+      next.map(
+          initial: (_) {},
+          authenticated: (_) => context.go('/user/home'),
+          unauthenticated: (_) => context.go('/'));
+    });
+
     return Stack(
       children: [
-        // Background image with transparency
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -23,7 +41,6 @@ class SplashPage extends StatelessWidget {
             ),
           ),
         ),
-
         Positioned(
           top: 320,
           left: 0,
@@ -65,7 +82,6 @@ class SplashPage extends StatelessWidget {
             ),
           ),
         ),
-
         Positioned(
           bottom: 50,
           left: 0,

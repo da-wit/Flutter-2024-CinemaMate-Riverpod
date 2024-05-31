@@ -84,12 +84,12 @@ class CinemaDetail extends StatelessWidget {
                   const SizedBox(width: 30),
                   IconButton(
                       onPressed: () {
-                        print(movie);
+                        // print(movie);
                         if (movie != null) {
-                          print('passed');
+                          // print('passed');
                           context.pushNamed('editMovie', extra: movie);
                         } else {
-                          print('movie not found');
+                          // print('movie not found');
                         }
                       },
                       icon: const Icon(Icons.edit_square))

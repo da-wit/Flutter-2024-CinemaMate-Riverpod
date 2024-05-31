@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cinema_mate/domain/auth/user/user_token.dart';
 import 'package:cinema_mate/domain/crudMovie/cinema_profile/cinema_profile_failure.dart';
-
 import 'package:cinema_mate/domain/crudMovie/cinema_profile/i_cinema_profile_repository.dart';
 import 'package:cinema_mate/domain/user/cinema/cinema.dart';
 import 'package:cinema_mate/infrastructure/cinema/data_source/cinema_api.dart';
@@ -33,7 +32,6 @@ class CinemaProfileRepository implements ICinemaProfileRepository {
 
     final result = await cinemaApiImplementations
         .checkCinemaDetail(UserToken(token: currentCinemaToken));
-    print(result);
 
     return result.fold((failure) {
       return left(const CinemaProfileFailure.serverError());
@@ -59,7 +57,6 @@ class CinemaProfileRepository implements ICinemaProfileRepository {
     }
     final result = await cinemaApiImplementations.uploadImage(
         image.path, UserToken(token: currentCinemaToken));
-    print(result);
     return result.fold((failure) {
       return left(const CinemaProfileFailure.serverError());
     }, (cinemaDto) {

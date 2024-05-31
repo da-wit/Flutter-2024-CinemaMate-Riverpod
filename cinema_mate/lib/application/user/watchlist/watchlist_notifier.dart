@@ -13,12 +13,22 @@ class WatchlistNotifier extends StateNotifier<WatchlistState> {
 
   void onWatchlistStarted() {
     state = const WatchlistState.loading();
-    iWatchListRepository.getWatchlist().listen((watchlistMoviesOrFailure) {
-      watchlistMoviesOrFailure.fold(
-          (failure) => state = WatchlistState.loadFailure(failure),
-          (watchlistMovies) =>
-              state = WatchlistState.loadSuccess(watchlistMovies));
-    });
+    iWatchListRepository.getWatchlist().listen(
+      (watchlistMoviesOrFailure) {
+        print('object');
+        onWatchlistRecieved(failureOrNotes: watchlistMoviesOrFailure);
+        // watchlistMoviesOrFailure.fold(
+        //     (failure) => state = WatchlistState.loadFailure(failure),
+        //     (watchlistMovies) =>
+        //         state = WatchlistState.loadSuccess(watchlistMovies));
+      },
+      onError: (error) {
+        print('An error occurred: $error');
+      },
+      onDone: () {
+        print('Stream is done emitting data');
+      },
+    );
   }
 
   void onWatchlistRecieved(
@@ -30,24 +40,47 @@ class WatchlistNotifier extends StateNotifier<WatchlistState> {
             state = WatchlistState.loadSuccess(watchlistMovies));
   }
 
-  void onWatchlistAdded({required WatchlistMovie watchlistMovie}) {
-    iWatchListRepository.addWatchlist(watchlistMovie.id).then(
+  void onWatchlistAdded({required int addedMovieId}) {
+    iWatchListRepository.addWatchlist(addedMovieId).then(
       (failureOrSuccess) {
-        failureOrSuccess.fold(
-            (failure) => state = WatchlistState.loadFailure(failure),
-            (_) => state = const WatchlistState.addSuccess());
+        failureOrSuccess.fold((failure) {
+          if (failure == const WatchlistFailure.movieAlreadyInWatchlist()) {
+            print('already on watch');
+            state = const WatchlistState.movieAlreadyInWatchlist();
+          } else {
+            state = WatchlistState.loadFailure(failure);
+          }
+        }, (_) {
+          return state = const WatchlistState.addSuccess();
+        });
       },
     );
   }
 
-  void onWatchlistRemoved({required WatchlistMovie watchlistMovie}) {
-    iWatchListRepository.removeWatchlist(watchlistMovie.id).then(
+  void onWatchlistRemoved({required int removeMovieId}) {
+    iWatchListRepository.removeWatchlist(removeMovieId).then(
       (failureOrSuccess) {
         failureOrSuccess.fold(
           (failure) => state = WatchlistState.loadFailure(failure),
-          (_) => state = const WatchlistState.removeSuccess(),
+          (_) => onWatchlistStarted(),
         );
       },
     );
   }
 }
+
+// class WatchlistEvent with _$WatchlistEvent {
+//   const factory WatchlistEvent.watchlistStarted() = WatchlistStarted;
+
+//   const factory WatchlistEvent.watchlistRecieved(
+//     Either<WatchlistFailure, List<WatchlistMovie>> failureOrWatchlistMovies,
+//   ) = WatchlistRecieved;
+
+//   const factory WatchlistEvent.watchlistAdded(
+//     int addMovieId,
+//   ) = WatchlistAdded;
+
+//   const factory WatchlistEvent.watchlistRemoved(
+//     int removeMovieId,
+//   ) = WatchlistRemoved;
+// }

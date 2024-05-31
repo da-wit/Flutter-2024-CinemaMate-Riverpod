@@ -96,11 +96,11 @@ class AuthApiImplementations {
 // api function to get the currently signed in user
 // api endpoint - POST BASE_URL/users/current
   Future<Option<UserDto>> currentUser(UserTokenDto userToken) async {
-    final signInUrl = Uri.parse('$baseUrl/users/current');
+    final currentUrl = Uri.parse('$baseUrl/users/current');
 
     try {
-      final http.Response response = await client.post(
-        signInUrl,
+      final http.Response response = await client.get(
+        currentUrl,
         headers: <String, String>{
           'Authorization': 'Bearer ${userToken.token}',
         },
@@ -108,7 +108,13 @@ class AuthApiImplementations {
 
       if (response.statusCode == 200) {
         Map<String, dynamic> responseBody = jsonDecode(response.body);
-        return some(UserDto.fromJson(responseBody));
+        return some(
+          UserDto(
+            id: responseBody['sub'],
+            username: responseBody['username'],
+            email: responseBody['email'],
+          ),
+        );
       } else {
         return none();
       }
@@ -125,10 +131,14 @@ class AuthApiImplementations {
       required UserTokenDto userToken}) async {
     final changePasswordUrl = Uri.parse('$baseUrl/users/changepass');
     try {
-      final http.Response response = await client.post(
+      final http.Response response = await client.patch(
         changePasswordUrl,
         headers: <String, String>{
           'Authorization': 'Bearer ${userToken.token}',
+        },
+        body: {
+          "currentPassword": currentPassword.password,
+          "newPassword": newPassword.password,
         },
       );
 
@@ -154,18 +164,20 @@ class AuthApiImplementations {
 // api function to change username
 // api endpoint - POST BASE_URL/users/edit
   Future<Either<AuthFailure, Unit>> changeUsername(
-      {required String currentUsername,
-      required String newUsername,
-      required UserTokenDto userToken}) async {
+      {required String newUsername, required UserTokenDto userToken}) async {
     final changeUsernameUrl = Uri.parse('$baseUrl/users/edit');
 
     try {
-      final http.Response response = await client.post(
+      final http.Response response = await client.patch(
         changeUsernameUrl,
         headers: <String, String>{
           'Authorization': 'Bearer ${userToken.token}',
         },
+        body: {
+          "username": newUsername,
+        },
       );
+
       if (response.statusCode == 200) {
         return right(unit);
       } else {
