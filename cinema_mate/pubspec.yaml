@@ -58,6 +58,8 @@ dependencies:
   mocktail: ^1.0.3
   mockito: ^5.4.4
   state_notifier_test: ^0.0.10
+  integration_test:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

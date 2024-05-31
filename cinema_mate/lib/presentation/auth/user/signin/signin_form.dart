@@ -147,7 +147,7 @@ class SignInForm extends ConsumerWidget {
                         textSize: 25,
                       ),
                       const SizedBox(
-                        height: 70,
+                        height: 30,
                       )
                     ],
                   ),
