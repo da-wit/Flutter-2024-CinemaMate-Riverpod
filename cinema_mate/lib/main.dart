@@ -1,8 +1,10 @@
 // import 'package:cinema_mate/presentation/auth/user/registration/registration_page.dart';
 // import 'package:cinema_mate/presentation/auth/user/registration/registration_page.dart';
-import 'package:cinema_mate/presentation/auth/user/user_profile/user_profile.dart';
+// import 'package:cinema_mate/presentation101/auth/user/user_profile/user_profile.dart';
 // import 'package:cinema_mate/presentation/core/signin/signin_page.dart';
 // import 'package:cinema_mate/presentation/core/signin/signin_page.dart';
+import 'package:cinema_mate/presentation/auth/cinema/registration/cinema_registration_form.dart';
+import 'package:cinema_mate/presentation/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:cinema_mate/injection.dart';
 // import 'package:cinema_mate/presentation/auth/user/user_profile/user_profile.dart';
@@ -20,7 +22,9 @@ Future main() async {
   runApp(
     const ProviderScope(
       child: MaterialApp(
-        home: UserProfile(),
+        home: Scaffold(
+          body: SplashPage(),
+        ),
       ),
     ),
   );
